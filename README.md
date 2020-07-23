@@ -1,2 +1,2 @@
 # Stock-Management
-A really simple and quick stock management system.
+A really simple stock management system.
