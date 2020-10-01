@@ -50,6 +50,7 @@ class Stock{
 		fflush(stdout);
 			
 		//additional attributes		
+		return;
 	}	
 	
 	void modify()
@@ -93,13 +94,15 @@ class Stock{
 			cout<<"Enter Unit Cost :"; cin>>unitCost;
 		}
 		// additional attributes
+		return;
 		
 	}
 	void divider()
 	{
 		cout<<setw(CELL_WIDTH)<<left<<setfill('-')<<"+";
 		cout<<setw(CELL_WIDTH)<<left<<setfill('-')<<"+";
-		cout<<"+\n";		
+		cout<<"+\n";
+		return;
 	}
 
 	void print()
@@ -137,6 +140,7 @@ class Stock{
 		cout<<setw(80)<<setfill('#')<<"";
 		cout<<"\n";
 		//additional attributes
+		return;
 	}
 	
 	int getId()
@@ -153,7 +157,7 @@ class Stock{
 		int size = fin.tellg();
 		int count = size/sizeof(Stock);        //important
 		
-		if(count == 0 )
+		if(count == 0)
 			return 1;
 		
 		int pos = size - sizeof(Stock);
@@ -169,7 +173,7 @@ class Stock{
 		return qty;
 	}
 	
-}gstock;
+} gstock;
 
 class Purchase
 {
@@ -205,6 +209,7 @@ class Purchase
 			fflush(stdout);
 				
 			//additional attributes	 
+			return;
 		}
 		
 		void print()
@@ -213,6 +218,7 @@ class Purchase
 			cout<<mobile<<"\t";
 			cout<<qty<<"\t";
 			cout<<amount<<"\t";
+			return;
 		}	
 		
 		int getStockId()
@@ -225,6 +231,7 @@ class Purchase
 			return qty;
 		}
 };
+
 void viewStock()
 {
 	Stock temp;
@@ -234,6 +241,7 @@ void viewStock()
 		temp.print();
 	}
 	fin.close();
+	return;
 }
 
 void addStock()
@@ -245,6 +253,7 @@ void addStock()
 	fout.write((char*)&stock,sizeof(Stock));
 	fout.flush();
 	fout.close();
+	return;
 }
 
 void deleteStock()
@@ -279,6 +288,7 @@ void deleteStock()
 	rename("temp.dat","stocks.dat");
 	
 	cout<<"Stock Removed!";
+	return;
 }
 
 void modifyStock()
@@ -313,6 +323,7 @@ void modifyStock()
 	}
 	
 	cout<<"Stock Modified !!";
+	return;
 }
 
 Stock* findStock(int id)
@@ -345,6 +356,7 @@ void addPurchase(Stock stock)
 	fout.close();
 	
 	cout<<"!!Purchase Added!!";
+	return;
 }
 
 void viewPurchases(int id)
@@ -358,6 +370,7 @@ void viewPurchases(int id)
 		temp.print();
 	}
 	fin.close();
+	return;
 }
 
 void purchaseMenu()
@@ -389,6 +402,7 @@ void purchaseMenu()
 		case 2 : addPurchase(*stock);
 			break;
 	}
+	return;
 }
 
 int main()
@@ -426,4 +440,5 @@ int main()
 	
 		_getch();
 	}
+	return 0;
 }
